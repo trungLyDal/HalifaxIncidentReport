@@ -17,10 +17,15 @@ body, html {
 
 .header-home
 {
-  border-style: solid;
-  padding-left: 1vw;
+  padding-left: 3vw;
   font-family: 'Noto Serif', serif;
+  word-spacing: 10px;
 }
+
+h1{
+  letter-spacing: 0.3vw;
+}
+
 
 
 
