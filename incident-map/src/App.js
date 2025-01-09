@@ -1,12 +1,12 @@
 import './App.css';
-
+import Header from './header'
 import React from 'react';
 import MapComponent from './MapComponent';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Halifax Incident Map</h1>
+      <Header/>
       <MapComponent />
     </div>
   );
