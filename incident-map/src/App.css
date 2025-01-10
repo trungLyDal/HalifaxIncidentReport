@@ -1,32 +1,121 @@
-.App {
-  text-align: left;
-  height: 100vh;
-  width: 100vw;
+/* Header */
+.header-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw;
   font-family: 'Noto Serif', serif;
   background-color: black;
   color: white;
+  position: relative; /* Allow the menu to be above content */
 }
-
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Ensure the body covers the full viewport height */
-  background-color: black; /* Black background for the entire page */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-.header-home
-{
-  padding-left: 3vw;
+body, html, button{
   font-family: 'Noto Serif', serif;
-  word-spacing: 10px;
 }
-
-h1{
+h1 {
+  margin: 0;
   letter-spacing: 0.3vw;
 }
 
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem; /* Large hamburger icon */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth animation for toggling */
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg); /* Rotate when active */
+}
+
+/* Sidebar Menu - Open from the right */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially off-screen */
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  transition: right 0.3s ease; /* Slide-in effect */
+  padding-top: 10vh; /* Space for the header */
+  z-index: 100; /* Ensure the sidebar is above other content */
+}
+
+.sidebar.open {
+  right: 0; /* Slide in when open */
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Overlay for the sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 99; /* Behind the sidebar */
+  display: none; /* Initially hidden */
+}
+
+/* Show overlay when sidebar is open */
+.sidebar-overlay.open {
+  display: block; /* Show overlay when sidebar is open */
+}
+
+/* Landing Page Styles */
+.landing-page {
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: black; /* Black background */
+  display: flex; /* Flexbox for centering content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  color: white; /* White text color */
+  flex-direction: column; /* Stack content vertically */
+  text-align: center; /* Center text inside all elements */
+}
+
+.landing-content h1 {
+  font-size: 3rem; /* Large title */
+  margin-bottom: 20px;
+}
+
+.landing-content p {
+  font-size: 1.5rem; /* Subtitle */
+  margin-bottom: 30px;
+}
 
 
+/* Start Button */
+.start
+{
+  border-style: solid;
+  border-color: white;
+  padding: 3vw;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+}
 
-
+/* Mobile Menu: Show/hide sidebar when hamburger is clicked */
+@media (max-width: 768px) {
+  /* Show hamburger menu icon on smaller screens */
+  .menu-toggle {
+    display: block;
+  }
+}
