@@ -99,7 +99,7 @@ const MapComponent = () => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={halifaxCoords}
-        zoom={12}
+        zoom={15}
         options={{
           styles: mapStyles, // Apply dark mode style here
           disableDefaultUI: true, // Optional: Disable default UI for a cleaner look
