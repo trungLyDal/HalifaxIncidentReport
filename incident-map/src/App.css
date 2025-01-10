@@ -226,7 +226,13 @@ h1 {
   opacity: 1;
 }
 
-
+.AboutUs
+{
+  height: 99vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: black; /* Black background */
+  color: white;
+}
 /* Mobile Menu: Show/hide sidebar when hamburger is clicked */
 @media (max-width: 768px) {
   /* Show hamburger menu icon on smaller screens */
