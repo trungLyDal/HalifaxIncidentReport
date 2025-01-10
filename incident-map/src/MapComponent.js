@@ -1,4 +1,5 @@
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -9,105 +10,117 @@ const MapComponent = () => {
   };
 
   const containerStyle = {
-    width: '100%',
-    height: '100vh',
+    width: "80%", // Use percentage to make it responsive
+    height: "60vh", // Use viewport height to make it responsive
+    maxWidth: "800px", // Set a max-width for large screens
+    maxHeight: "600px", // Set a max-height for large screens
   };
 
   const mapStyles = [
-    { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-    { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-    { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
     {
-      featureType: 'administrative.locality',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
     },
     {
-      featureType: 'poi',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
     },
     {
-      featureType: 'poi.park',
-      elementType: 'geometry',
-      stylers: [{ color: '#263c3f' }],
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#263c3f" }],
     },
     {
-      featureType: 'poi.park',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#6b9a76' }],
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#6b9a76" }],
     },
     {
-      featureType: 'road',
-      elementType: 'geometry',
-      stylers: [{ color: '#38414e' }],
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#38414e" }],
     },
     {
-      featureType: 'road',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#212a37' }],
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#212a37" }],
     },
     {
-      featureType: 'road',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#9ca5b3' }],
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9ca5b3" }],
     },
     {
-      featureType: 'road.highway',
-      elementType: 'geometry',
-      stylers: [{ color: '#746855' }],
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#746855" }],
     },
     {
-      featureType: 'road.highway',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#1f2835' }],
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#1f2835" }],
     },
     {
-      featureType: 'road.highway',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#f3d19c' }],
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#f3d19c" }],
     },
     {
-      featureType: 'transit',
-      elementType: 'geometry',
-      stylers: [{ color: '#2f3948' }],
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [{ color: "#2f3948" }],
     },
     {
-      featureType: 'transit.station',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
+      featureType: "transit.station",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
     },
     {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [{ color: '#17263c' }],
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#17263c" }],
     },
     {
-      featureType: 'water',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#515c6d' }],
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#515c6d" }],
     },
     {
-      featureType: 'water',
-      elementType: 'labels.text.stroke',
-      stylers: [{ color: '#17263c' }],
+      featureType: "water",
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#17263c" }],
     },
   ];
 
+  const wrapperStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh", // Full-screen height for centering
+    backgroundColor: "#1a1a1a", // Optional: background color
+  };
+
   return (
-    <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={halifaxCoords}
-        zoom={15}
-        options={{
-          styles: mapStyles, // Apply dark mode style here
-          disableDefaultUI: true, // Optional: Disable default UI for a cleaner look
-        }}
-      >
-        <Marker position={halifaxCoords} />
-      </GoogleMap>
-    </LoadScript>
+    <div style={wrapperStyle}>
+      <LoadScript googleMapsApiKey={apiKey}>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={halifaxCoords}
+          zoom={15}
+          options={{
+            styles: mapStyles,
+            disableDefaultUI: false,
+          }}
+        >
+          <Marker position={halifaxCoords} />
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 };
 
