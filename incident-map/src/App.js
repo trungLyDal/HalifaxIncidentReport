@@ -4,7 +4,7 @@ import React from 'react';
 import MapComponent from './MapComponent';
 import Landing from './LandingPage';
 import AboutUs from './AboutUs';
-
+import Footer from './footer';
 const App = () => {
   return (
     <div className="App">
@@ -12,6 +12,7 @@ const App = () => {
       <Landing/>
       <AboutUs/>
       <MapComponent />
+      <Footer/>
     </div>
   );
 };
