@@ -22,6 +22,39 @@ body, html, button {
   box-sizing: border-box; /* Prevents padding from affecting overall width */
 }
 
+.AboutUs {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 10vh;
+}
+
+.header-socials {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.instagram-posts {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10vh;
+}
+
+.instagram-media {
+  display: block;
+  width: 32%; /* Reduced width for smaller posts */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.instagram-media iframe {
+  width: 100%;
+  height: 250px; /* Reduced height for smaller posts */
+  border: none;
+}
+
+
+
+
 h1 {
   margin: 0;
   letter-spacing: 0.3vw;
