@@ -4,7 +4,7 @@ import './App.css';
 function AboutUs() {
   return (
     <div className="AboutUs">
-      <h1 className='header-socials'>Welcome to the Black Page!</h1>
+      <h1 className='header-socials'><b>Official Media Updates</b></h1>
 
       <div className="instagram-posts">
         <blockquote

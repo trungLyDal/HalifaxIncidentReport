@@ -13,7 +13,7 @@ const LandingPage = () => {
     <div className="landing-page">
       <div className="landing-content">
         <h1><b>WELCOME TO HIT</b></h1>
-        <p>"Stay Alert, Stay Safe, Stay Halifax."</p>
+        <p><i>"Stay Alert, Stay Safe, Stay Halifax."</i></p>
         <button className="animated-button" onClick={handleStartClick}>
           <svg
             viewBox="0 0 24 24"
