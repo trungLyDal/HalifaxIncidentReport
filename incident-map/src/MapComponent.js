@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker, InfoWindow  } from "@react-google-maps/api";
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -115,7 +115,13 @@ const MapComponent = () => {
             disableDefaultUI: false,
           }}
         >
-          <Marker position={halifaxCoords} />
+          <Marker position={halifaxCoords} 
+          label={{
+            text: "Halifax",
+            color: "white",
+            fontSize: "14px",
+            fontWeight: "bold"
+          }}/>
         </GoogleMap>
       </LoadScript>
     </div>

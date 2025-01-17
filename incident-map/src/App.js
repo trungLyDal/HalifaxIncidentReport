@@ -3,14 +3,14 @@ import Header from './header'
 import React from 'react';
 import MapComponent from './MapComponent';
 import Landing from './LandingPage';
-import AboutUs from './AboutUs';
+import Socials from './Socials';
 import Footer from './footer';
 const App = () => {
   return (
     <div className="App">
       <Header/>
       <Landing/>
-      <AboutUs/>
+      <Socials/>
       <MapComponent />
       <Footer/>
     </div>

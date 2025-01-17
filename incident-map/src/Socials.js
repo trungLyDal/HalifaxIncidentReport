@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function AboutUs() {
+function Socials() {
   return (
     <div className="AboutUs">
       <h1 className='header-socials'><b>Official Media Updates</b></h1>
@@ -25,4 +25,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Socials;
