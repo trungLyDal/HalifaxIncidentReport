@@ -10,10 +10,8 @@ const MapComponent = () => {
   };
 
   const containerStyle = {
-    width: "80%", // Use percentage to make it responsive
-    height: "60vh", // Use viewport height to make it responsive
-    maxWidth: "800px", // Set a max-width for large screens
-    maxHeight: "600px", // Set a max-height for large screens
+    width: "100%", // Use percentage to make it responsive
+    height: "100vh", // Use viewport height to make it responsive
   };
 
   const mapStyles = [
